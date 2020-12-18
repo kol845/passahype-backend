@@ -1,0 +1,4 @@
+1. DB is working via tmpApp.py, make it work from the actual web server by URL arguments. getUser() + setUser()
+2. Rewrite routes so that it fits passa hype
+3. Rewrite model so that it fits passahype, and you can login/register users. Make sure tokens and password hashing is used.
+4. Refactor code. Remove redundnacies. Create more packages because app/ is getting way to big.
