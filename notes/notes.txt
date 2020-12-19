@@ -1,2 +1,0 @@
-Before upload to git:
-Remove the config.json file from this project, it contains sensitive data

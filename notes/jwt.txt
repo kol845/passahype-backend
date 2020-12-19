@@ -1,8 +1,0 @@
-Experation time: 6 hours
-JWT exp refreaches on each API call, with a new updated exp
-
-On a API call:
-    1. Check validity of JWT
-    2. Check experation date of JWT
-        1. If expired: Reject and raise error(or just log out user)
-        2. Else: Create a new JWT and send back with data
