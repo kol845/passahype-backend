@@ -1,7 +1,7 @@
 from flask import jsonify, request
 from app import app
 from app.controller import Controller
-from app.db_models import EndUser
+from app.integration.db_models import EndUser
 
 
 contr = Controller()

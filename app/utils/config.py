@@ -1,7 +1,7 @@
 # When deploying, move config.json to /etc/config.json, and change the URL ""./config.json" to point at "/etc/config.json", as shown in:
 # https://www.youtube.com/watch?v=goToXTC96Co
 import json
-with open('./app/config.json') as configFile:
+with open('./app/utils/config.json') as configFile:
     config = json.load(configFile)
 
 class Config:

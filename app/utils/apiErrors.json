@@ -1,0 +1,22 @@
+{
+    "ARG_MISSING":{
+        "code":"ARG_MISSING",
+        "message":"Faulty request. Argument(s) missing."
+    },
+    "LOGIN_ERROR":{
+        "code":"LOGIN_ERROR",
+        "message":"The email or password was not correct!"
+    },
+    "USER_ALREADY_EXISTS":{
+        "code":"USER_ALREADY_EXISTS",
+        "message":"Given email is already registered in the system. Please log in."
+    },
+    "BAD_EMAIL":{
+        "code":"BAD_EMAIL",
+        "message":"Invalid email"
+    },
+    "BAD_PASSWD":{
+        "code":"BAD_PASSWD",
+        "message":"Invalid password. Password needs to be at least 8 characters long."
+    }
+}

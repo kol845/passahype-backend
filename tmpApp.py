@@ -1,10 +1,10 @@
 from datetime import datetime
 from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
+from app.utils.config import Config
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pebo:ZMw9p25AVAG2vFkWrPj24Usyr@localhost/passahype'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{Config.UNAME}:{Config.PASSWD}@{Config.HOST}/{Config.DBNAME}'
 db = SQLAlchemy(app)
 
 
@@ -13,8 +13,8 @@ class EndUser(db.Model):
     email = db.Column(db.String(128), unique=True, nullable=False)
     passwd = db.Column(db.String(128), unique=True, nullable=False)
 
-    utype = db.Column(db.Integer, nullable=False)
-    regDate = db.Column(db.Integer, nullable=False)
+    utype = db.Column(db.Integer, nullable=False, default=0)
+    regDate = db.Column(db.Integer, nullable=False, default=0)
     avatar_processed = db.Column(db.LargeBinary)
     phone = db.Column(db.Integer)
 
@@ -28,8 +28,17 @@ class EndUser(db.Model):
     def __repr__(self):
         return f"User('{self.email}', '{self.utype}', '{self.regDate}')"
 
+# class Token(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     token = db.Column(db.String(128), nullable=False)
+#     endUserID = db.Column(db.Integer, db.ForeignKey("end_user.id"))
+
+#     def __repr__(self):
+#         return f"Token('{self.id}', '{self.token}', '{self.endUserID}')"
+
+
 @app.route("/")
-def fuck_off_tmp():
+def index():
     return '<h1>I WILL NEVER BE SEEN.</h1>'
 
 if __name__ == '__main__':

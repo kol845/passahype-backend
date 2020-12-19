@@ -1,4 +1,4 @@
-from app.model import Model
+from app.model.model import Model
 class Controller:
     def __init__(self):
         super().__init__()

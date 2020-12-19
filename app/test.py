@@ -1,3 +1,5 @@
+import re 
+
 # from db_auth import DBAuth
 # import psycopg2
 
@@ -28,6 +30,17 @@
 
 # print(auth.getPasswd())
 
-from config import Config
+# from config import Config
 
-print(Config.UNAME)
+# print(Config.UNAME)
+
+
+def emailControl(email):
+    if(re.search(regex,email)):  
+        return True 
+    else:  
+        return False
+
+regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+email = "pebo@pebo.com"
+print(re.search(regex,email))
