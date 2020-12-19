@@ -3,9 +3,6 @@ from app.integration.db_models import EndUser
 
 
 class DB():
-    def __init__(self):
-        print("Handler: created")
-        # db.create_all()
     def registerUser(self, email, passwd, regDate, utype = 0):
         newUser = EndUser(email=email, passwd=passwd, regDate=regDate, utype=utype)
         db.session.add(newUser)
